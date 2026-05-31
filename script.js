@@ -3,13 +3,9 @@ const cursor = document.querySelector('.cursor');
 const rectangle = document.querySelector('.rectangle');
 
 const texts = [
-    'Creative developer', 
-    'Ugly',
-    'What Is Love?',
-    'Digital artist', 
-    'Code enthusiast',
-    'Design lover',
-    'Innovation seeker'
+    'VibeCoder',
+    'AirCode Owner',
+    'Cr4ck3d Owner'
 ];
 let textIndex = 0;
 let charIndex = 0;
@@ -47,7 +43,7 @@ document.addEventListener('mousemove', (event) => {
   rectangle.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
 });
 
-const titleText = "@sanity.";
+const titleText = "@ventreeexx";
 let titleIndex = 0;
 
 function animateTitle() {
