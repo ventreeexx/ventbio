@@ -147,8 +147,8 @@ body {
 }
 
 .custom-icon {
-  width: 24px;
-  height: 24px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
 }
 
@@ -158,7 +158,8 @@ body {
   text-align: center;
 }
 
-.link-card:hover i {
+.link-card:hover i,
+.link-card:hover .custom-icon {
   transform: scale(1.2);
 }
 
