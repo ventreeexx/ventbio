@@ -36,9 +36,13 @@ typeEffect();
 document.addEventListener('mousemove', (event) => {
   const { clientX, clientY } = event;
   const { innerWidth, innerHeight } = window;
-
-  const xRotation = ((clientY / innerHeight) - 0.5) * 20; 
-  const yRotation = ((clientX / innerWidth) - 0.5) * -20;
+  const rect = rectangle.getBoundingClientRect();
+  const centerX = rect.left + rect.width / 2;
+  const centerY = rect.top + rect.height / 2;
+  const deltaX = (clientX - centerX) / (rect.width / 2);
+  const deltaY = (clientY - centerY) / (rect.height / 2);
+  const xRotation = deltaY * -15;
+  const yRotation = deltaX * 15;
 
   rectangle.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
 });
