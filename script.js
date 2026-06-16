@@ -1,7 +1,6 @@
 const animatedText = document.getElementById('animated-text');
 const cursor = document.querySelector('.cursor');
 const rectangle = document.querySelector('.rectangle');
-const visitCounter = document.getElementById('visitCounter');
 
 const texts = [
     'VibeCoder',
@@ -52,15 +51,6 @@ function animateTitle() {
 }
 
 animateTitle();
-
-fetch('https://api.countapi.xyz/hit/ventreeexx/ventbio')
-  .then(res => res.json())
-  .then(data => {
-    visitCounter.textContent = `🌍 Odwiedziny: ${data.value}`;
-  })
-  .catch(() => {
-    visitCounter.textContent = '🌍 Odwiedziny: ?';
-  });
 
 let ticking = false;
 let lastRect = null;
