@@ -184,8 +184,8 @@ body {
 }
 
 .instagram:hover {
-  background: linear-gradient(135deg, rgba(225, 48, 108, 0.2), rgba(225, 48, 108, 0.05));
-  border-color: rgba(225, 48, 108, 0.4);
+  background: linear-gradient(135deg, rgba(128, 128, 128, 0.2), rgba(128, 128, 128, 0.05));
+  border-color: rgba(128, 128, 128, 0.4);
 }
 
 .github:hover {
