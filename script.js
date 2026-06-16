@@ -1,6 +1,7 @@
 const animatedText = document.getElementById('animated-text');
 const cursor = document.querySelector('.cursor');
 const rectangle = document.querySelector('.rectangle');
+const visitCounter = document.getElementById('visitCounter');
 
 const texts = [
     'VibeCoder',
@@ -33,20 +34,6 @@ function deleteEffect() {
 
 typeEffect();
 
-document.addEventListener('mousemove', (event) => {
-  const { clientX, clientY } = event;
-  const { innerWidth, innerHeight } = window;
-  const rect = rectangle.getBoundingClientRect();
-  const centerX = rect.left + rect.width / 2;
-  const centerY = rect.top + rect.height / 2;
-  const deltaX = (clientX - centerX) / (rect.width / 2);
-  const deltaY = (clientY - centerY) / (rect.height / 2);
-  const xRotation = deltaY * -30;
-  const yRotation = deltaX * 30;
-
-  rectangle.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
-});
-
 const titleText = "@ventreeexx";
 let titleIndex = 0;
 
@@ -69,28 +56,37 @@ animateTitle();
 fetch('https://api.countapi.xyz/hit/ventreeexx/ventbio')
   .then(res => res.json())
   .then(data => {
-    document.getElementById('visitCounter').textContent = `🌍 Odwiedziny: ${data.value}`;
+    visitCounter.textContent = `🌍 Odwiedziny: ${data.value}`;
   })
   .catch(() => {
-    document.getElementById('visitCounter').textContent = '🌍 Odwiedziny: ?';
+    visitCounter.textContent = '🌍 Odwiedziny: ?';
   });
 
-document.querySelectorAll('.link-card').forEach(link => {
-  link.addEventListener('mouseenter', function() {
-    this.style.transform = 'translateY(-8px) scale(1.05)';
-  });
-  
-  link.addEventListener('mouseleave', function() {
-    this.style.transform = 'translateY(0) scale(1)';
-  });
-});
+let ticking = false;
+let lastRect = null;
 
 document.addEventListener('mousemove', (event) => {
-  const { clientX, clientY } = event;
-  const { innerWidth, innerHeight } = window;
-  
-  const moveX = (clientX - innerWidth / 2) * 0.01;
-  const moveY = (clientY - innerHeight / 2) * 0.01;
-  
-  document.body.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      const { clientX, clientY } = event;
+      const { innerWidth, innerHeight } = window;
+
+      const rect = rectangle.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      const deltaX = (clientX - centerX) / (rect.width / 2);
+      const deltaY = (clientY - centerY) / (rect.height / 2);
+      const xRotation = Math.max(-30, Math.min(30, deltaY * -30));
+      const yRotation = Math.max(-30, Math.min(30, deltaX * 30));
+
+      rectangle.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+
+      const moveX = (clientX - innerWidth / 2) * 0.01;
+      const moveY = (clientY - innerHeight / 2) * 0.01;
+      document.body.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+
+      ticking = false;
+    });
+    ticking = true;
+  }
 });
