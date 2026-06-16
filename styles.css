@@ -29,19 +29,22 @@ body {
   transition: transform 0.1s ease-out;
   display: flex;
   flex-direction: column;
-  padding: 24px;
-  gap: 16px;
+  padding: 20px;
 }
 
 .avatar-section {
   display: flex;
   align-items: center;
   gap: 16px;
-  transition: transform 0.3s ease;
+  padding: 10px;
+  border-radius: 12px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
 
 .avatar-section:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .avatar {
@@ -92,6 +95,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 12px 0;
 }
 
 .links-grid {
@@ -179,11 +183,10 @@ body {
 
 .footer-text {
   text-align: center;
-  padding: 8px 15px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-  border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(5px);
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   overflow: hidden;
 }
