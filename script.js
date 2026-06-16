@@ -53,7 +53,6 @@ function animateTitle() {
 animateTitle();
 
 let ticking = false;
-let lastRect = null;
 
 document.addEventListener('mousemove', (event) => {
   if (!ticking) {
@@ -61,11 +60,8 @@ document.addEventListener('mousemove', (event) => {
       const { clientX, clientY } = event;
       const { innerWidth, innerHeight } = window;
 
-      const rect = rectangle.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-      const deltaX = (clientX - centerX) / (rect.width / 2);
-      const deltaY = (clientY - centerY) / (rect.height / 2);
+      const deltaX = (clientX / innerWidth - 0.5) * 2;
+      const deltaY = (clientY / innerHeight - 0.5) * 2;
       const xRotation = Math.max(-30, Math.min(30, deltaY * -30));
       const yRotation = Math.max(-30, Math.min(30, deltaX * 30));
 
@@ -79,4 +75,9 @@ document.addEventListener('mousemove', (event) => {
     });
     ticking = true;
   }
+});
+
+document.addEventListener('mouseleave', () => {
+  rectangle.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  document.body.style.backgroundPosition = '50% 50%';
 });
