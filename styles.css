@@ -37,6 +37,11 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  transition: transform 0.3s ease;
+}
+
+.avatar-section:hover {
+  transform: translateY(-4px);
 }
 
 .avatar {
