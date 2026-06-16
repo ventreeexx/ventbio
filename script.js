@@ -66,6 +66,15 @@ function animateTitle() {
 
 animateTitle();
 
+fetch('https://api.countapi.xyz/hit/ventreeexx/ventbio')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visitCounter').textContent = `🌍 Odwiedziny: ${data.value}`;
+  })
+  .catch(() => {
+    document.getElementById('visitCounter').textContent = '🌍 Odwiedziny: ?';
+  });
+
 document.querySelectorAll('.link-card').forEach(link => {
   link.addEventListener('mouseenter', function() {
     this.style.transform = 'translateY(-8px) scale(1.05)';
