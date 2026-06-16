@@ -111,12 +111,12 @@ body {
   align-items: center;
   justify-content: center;
   padding: 15px 10px;
-  background: rgba(255, 255, 255, 0.05);
+  background: transparent;
   border-radius: 15px;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid transparent;
   position: relative;
   overflow: hidden;
 }
