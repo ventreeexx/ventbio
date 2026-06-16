@@ -38,13 +38,14 @@ body {
   gap: 16px;
   padding: 10px;
   border-radius: 12px;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 }
 
 .avatar-section:hover {
-  transform: translateY(-4px) scale(1.02);
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-6px) scale(1.03);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .avatar {
@@ -54,6 +55,12 @@ body {
   overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar-section:hover .avatar {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .avatar img {
@@ -74,6 +81,11 @@ body {
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
   margin: 0;
+  transition: text-shadow 0.3s ease;
+}
+
+.avatar-section:hover .name {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 255, 255, 0.8);
 }
 
 .description {
