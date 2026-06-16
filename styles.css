@@ -111,13 +111,12 @@ body {
   align-items: center;
   justify-content: center;
   padding: 15px 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   text-decoration: none;
   color: white;
   transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -167,33 +166,18 @@ body {
 }
 
 .youtube:hover {
-  background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(255, 0, 0, 0.1));
-  border-color: #ff0000;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.05));
+  border-color: rgba(255, 0, 0, 0.4);
 }
 
 .instagram:hover {
-  background: linear-gradient(135deg, rgba(225, 48, 108, 0.3), rgba(225, 48, 108, 0.1));
-  border-color: #e1306c;
-}
-
-.twitter:hover {
-  background: linear-gradient(135deg, rgba(29, 161, 242, 0.3), rgba(29, 161, 242, 0.1));
-  border-color: #1da1f2;
+  background: linear-gradient(135deg, rgba(225, 48, 108, 0.2), rgba(225, 48, 108, 0.05));
+  border-color: rgba(225, 48, 108, 0.4);
 }
 
 .github:hover {
-  background: linear-gradient(135deg, rgba(36, 41, 46, 0.3), rgba(36, 41, 46, 0.1));
-  border-color: #24292e;
-}
-
-.discord:hover {
-  background: linear-gradient(135deg, rgba(114, 137, 218, 0.3), rgba(114, 137, 218, 0.1));
-  border-color: #7289da;
-}
-
-.portfolio:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-  border-color: #ffffff;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-text {
