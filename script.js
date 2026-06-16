@@ -62,8 +62,8 @@ document.addEventListener('mousemove', (event) => {
 
       const deltaX = (clientX / innerWidth - 0.5) * 2;
       const deltaY = (clientY / innerHeight - 0.5) * 2;
-      const xRotation = Math.max(-30, Math.min(30, deltaY * -30));
-      const yRotation = Math.max(-30, Math.min(30, deltaX * 30));
+      const xRotation = Math.max(-60, Math.min(60, deltaY * -60));
+      const yRotation = Math.max(-60, Math.min(60, deltaX * 60));
 
       rectangle.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
 
