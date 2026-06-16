@@ -52,6 +52,7 @@ function animateTitle() {
 
 animateTitle();
 
+const glow = document.getElementById('glow');
 let ticking = false;
 
 document.addEventListener('mousemove', (event) => {
@@ -59,6 +60,9 @@ document.addEventListener('mousemove', (event) => {
     requestAnimationFrame(() => {
       const { clientX, clientY } = event;
       const { innerWidth, innerHeight } = window;
+
+      glow.style.left = `${clientX}px`;
+      glow.style.top = `${clientY}px`;
 
       const deltaX = (clientX / innerWidth - 0.5) * 2;
       const deltaY = (clientY / innerHeight - 0.5) * 2;
